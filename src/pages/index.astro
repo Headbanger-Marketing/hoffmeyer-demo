@@ -39,7 +39,7 @@ const steps = [
         </p>
         <div class="hero__cta">
           <a class="btn btn-primary btn-lg" href="/contact/"><Icon name="send" size={19} /> Request a Quote</a>
-          <a class="btn btn-cobalt-line btn-lg" href={`tel:${site.phone.tel}`}><Icon name="phone" size={19} /> {site.phone.display}</a>
+          <a class="btn btn-cobalt-line btn-lg" href="/contact/#quote"><Icon name="phone" size={19} /> Request a quote</a>
         </div>
         <div class="hero__proof">
           <span><Icon name="shield" size={16} /> Licensed &amp; insured</span>
@@ -247,9 +247,9 @@ const steps = [
     <div class="container contact__grid">
       <div class="contact__intro reveal">
         <h2>Tell us about the job</h2>
-        <p>From a drain to a new furnace to a 24-hour emergency, send a few details and we will call you back, usually within the hour during office hours.</p>
-        <a class="contact__phone" href={`tel:${site.phone.tel}`}><Icon name="phone" size={20} /> {site.phone.display}</a>
-        <p class="contact__hours"><b>Office</b><br />{site.hours.weekdays}<br />{site.hours.saturday}<br /><b>Emergency line</b><br /><a href={`tel:${site.phoneEmergency.tel}`} style="font-weight:600">{site.phoneEmergency.display}</a> &middot; {site.hours.emergency}</p>
+        <p>From a drain to a new furnace to a 24-hour emergency, send a few details and we will call you back, once the request and availability have been reviewed.</p>
+        <a class="contact__phone" href="/contact/#quote"><Icon name="phone" size={20} /> Request a quote</a>
+        <p class="contact__hours"><b>Office</b><br />{site.hours.weekdays}<br />{site.hours.saturday}<br /><b>Service requests</b><br />Use the quote form to arrange a callback.</p>
         <div class="contact__proof">
           <span><Icon name="check" size={16} /> Licensed plumbing, heating &amp; cooling contractor</span>
           <span><Icon name="check" size={16} /> Gas-certified (NG &amp; LP)</span>

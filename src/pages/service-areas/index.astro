@@ -46,7 +46,7 @@ const breadcrumb = JSON.stringify({
     <div class="container">
       <div class="shead" style="margin-bottom:24px"><span class="eyebrow on-dark">Beyond these towns</span><h2>The wider region we cover</h2></div>
       <p style="color:var(--on-espresso-soft);max-width:70ch;line-height:1.9;font-size:1.05rem">{AREAS.join(' · ')}</p>
-      <p style="color:var(--on-espresso-soft);margin-top:18px;max-width:62ch">Not sure whether we reach your address? Call us at <a href={`tel:${site.phone.tel}`}>{site.phone.display}</a> and we will confirm.</p>
+      <p style="color:var(--on-espresso-soft);margin-top:18px;max-width:62ch">To confirm coverage for your address, <a href="/contact/#quote">request a quote</a>.</p>
     </div>
   </section>
 
@@ -55,7 +55,7 @@ const breadcrumb = JSON.stringify({
       <div class="contact__intro reveal">
         <h2>Check your address</h2>
         <p>Tell us where you are and what you need, and we will confirm coverage and call you back.</p>
-        <a class="contact__phone" href={`tel:${site.phone.tel}`}><Icon name="phone" size={20} /> {site.phone.display}</a>
+        <a class="contact__phone" href="/contact/#quote"><Icon name="phone" size={20} /> Request a quote</a>
       </div>
       <div class="reveal d1"><QuoteForm id="areas-quote" /></div>
     </div>

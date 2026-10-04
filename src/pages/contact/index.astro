@@ -5,7 +5,7 @@ import QuoteForm from '../../components/QuoteForm.astro';
 import { site } from '../../data/site';
 
 const title = `Contact | ${site.name}`;
-const description = `Contact ${site.name} in ${site.address.locality}, Ontario. Licensed plumbers and gas-certified HVAC technicians for Goderich and Huron County. Office ${site.phone.display}, ${site.hours.emergency.toLowerCase()}.`;
+const description = `Contact ${site.name} in ${site.address.locality}, Ontario. Licensed plumbers and gas-certified HVAC technicians for Goderich and Huron County. Office $Request a quote, ${site.hours.emergency.toLowerCase()}.`;
 
 const breadcrumb = JSON.stringify({
   '@context': 'https://schema.org', '@type': 'BreadcrumbList',
@@ -25,7 +25,7 @@ const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURICompo
       </nav>
       <span class="eyebrow">Get in touch</span>
       <h1>Talk to a licensed plumber</h1>
-      <p class="lede" style="max-width:60ch">Send a few details and we will call you back, usually within the hour during office hours. For a flood, a no-heat call, or a gas smell, call the 24-hour emergency line directly.</p>
+      <p class="lede" style="max-width:60ch">Send a few details and we will call you back, once the request and availability have been reviewed. This form is not monitored for emergencies. For an immediate safety hazard, contact the appropriate emergency service.</p>
     </div>
   </section>
 
@@ -33,9 +33,9 @@ const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURICompo
     <div class="container contact__grid">
       <div class="contact__intro reveal">
         <h2>By phone or email</h2>
-        <a class="contact__phone" href={`tel:${site.phone.tel}`}><Icon name="phone" size={20} /> {site.phone.display}</a>
+        <a class="contact__phone" href="/contact/#quote"><Icon name="phone" size={20} /> Request a quote</a>
         <p style="margin-top:18px"><a href={`mailto:${site.email}`} style="font-weight:600">{site.email}</a></p>
-        <p class="contact__hours"><b>Office</b><br />{site.hours.weekdays}<br />{site.hours.saturday}<br />{site.hours.sunday}<br /><b>Emergency line</b><br /><a href={`tel:${site.phoneEmergency.tel}`} style="font-weight:600">{site.phoneEmergency.display}</a> &middot; {site.hours.emergency}</p>
+        <p class="contact__hours"><b>Office</b><br />{site.hours.weekdays}<br />{site.hours.saturday}<br />{site.hours.sunday}<br /><b>Service requests</b><br />Use the quote form to arrange a callback.</p>
         <div class="contact__proof">
           <span><Icon name="mapPin" size={16} /> {site.address.street}, {site.address.locality}, {site.address.region} {site.address.postal}</span>
           <span><Icon name="check" size={16} /> Licensed plumbing, heating &amp; cooling contractor</span>
@@ -53,7 +53,7 @@ const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURICompo
       <h2>Not sure what you need?</h2>
       <p class="lede">Tell us what is going on and we will point you to the right service and the right technician.</p>
       <div class="cta-actions">
-        <a class="btn btn-primary btn-lg" href={`tel:${site.phone.tel}`}><Icon name="phone" size={19} /> {site.phone.display}</a>
+        <a class="btn btn-primary btn-lg" href="/contact/#quote"><Icon name="phone" size={19} /> Request a quote</a>
       </div>
     </div>
   </section>

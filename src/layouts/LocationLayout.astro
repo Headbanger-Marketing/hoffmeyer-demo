@@ -23,7 +23,7 @@ const breadcrumb = JSON.stringify({
 const serviceSchema = JSON.stringify({
   '@context': 'https://schema.org', '@type': 'Service',
   serviceType: 'Plumbing, heating, cooling, and gas services',
-  provider: { '@type': 'Plumber', name: site.name, telephone: site.phone.tel, url: site.url },
+  provider: { '@type': 'Plumber', name: site.name,  url: site.url },
   areaServed: [{ '@type': 'City', name: loc.name }, { '@type': 'AdministrativeArea', name: loc.county }],
   url: `${site.url}/locations/${loc.slug}/`,
 });
@@ -42,7 +42,7 @@ const serviceSchema = JSON.stringify({
         <p class="lede">{loc.blurb} Our licensed plumbers and gas-certified HVAC technicians serve {loc.name} and the surrounding {loc.county} communities from the shop on Kingston Street in {site.address.locality}.</p>
         <div class="hero__cta" style="margin-top:24px">
           <a class="btn btn-primary btn-lg" href="/contact/"><Icon name="send" size={19} /> Request a Quote</a>
-          <a class="btn btn-espresso btn-lg" href={`tel:${site.phone.tel}`}><Icon name="phone" size={19} /> {site.phone.display}</a>
+          <a class="btn btn-espresso btn-lg" href="/contact/#quote"><Icon name="phone" size={19} /> Request a quote</a>
         </div>
       </div>
     </div>
@@ -75,7 +75,7 @@ const serviceSchema = JSON.stringify({
       <p class="lede">Emergency service is available day or night, and routine calls are booked from our {site.address.locality} shop.</p>
       <div class="cta-actions">
         <a class="btn btn-primary btn-lg" href="/contact/"><Icon name="send" size={19} /> Get a Quote</a>
-        <a class="btn btn-cobalt-line btn-lg" href={`tel:${site.phone.tel}`}><Icon name="phone" size={19} /> {site.phone.display}</a>
+        <a class="btn btn-cobalt-line btn-lg" href="/contact/#quote"><Icon name="phone" size={19} /> Request a quote</a>
       </div>
     </div>
   </section>
@@ -84,8 +84,8 @@ const serviceSchema = JSON.stringify({
     <div class="container contact__grid">
       <div class="contact__intro reveal">
         <h2>Ask about {loc.name}</h2>
-        <p>Tell us what you need in {loc.name} and we will call you back, usually within the hour during office hours.</p>
-        <a class="contact__phone" href={`tel:${site.phone.tel}`}><Icon name="phone" size={20} /> {site.phone.display}</a>
+        <p>Tell us what you need in {loc.name} and we will call you back, once the request and availability have been reviewed.</p>
+        <a class="contact__phone" href="/contact/#quote"><Icon name="phone" size={20} /> Request a quote</a>
       </div>
       <div class="reveal d1"><QuoteForm id={`${loc.slug}-quote`} /></div>
     </div>

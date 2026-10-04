@@ -28,7 +28,7 @@ const year = new Date().getFullYear();
     <div class="footer-links footer-contact">
       <h4>Contact</h4>
       <li><Icon name="mapPin" size={17} /> <span>{site.address.street}, {site.address.locality}, {site.address.region} {site.address.postal}</span></li>
-      <li><Icon name="phone" size={17} /> <a href={`tel:${site.phone.tel}`}>{site.phone.display}</a></li>
+      <li><Icon name="phone" size={17} /> <a href="/contact/#quote">Request a quote</a></li>
       <li><Icon name="clock" size={17} /> <span>{site.hours.weekdays}<br />{site.hours.saturday}<br />{site.hours.emergency}</span></li>
       <li style="margin-top:6px"><a href="/about/">About</a></li>
       <li><a href="/contact/">Contact</a></li>
@@ -45,6 +45,6 @@ const year = new Date().getFullYear();
 </footer>
 
 <div class="mobile-bar">
-  <a class="btn btn-espresso" href={`tel:${site.phone.tel}`}><Icon name="phone" size={18} /> Call</a>
+  <a class="btn btn-espresso" href="/contact/#quote"><Icon name="phone" size={18} /> Quote</a>
   <a class="btn btn-primary" href="/contact/"><Icon name="send" size={18} /> Get a Quote</a>
 </div>
