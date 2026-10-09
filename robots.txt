@@ -1,0 +1,21 @@
+# Allow all crawlers (the demo carries a noindex meta; this lifts at production cutover).
+User-agent: *
+Allow: /
+
+# Explicitly allow AI/answer-engine crawlers.
+User-agent: GPTBot
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: Claude-SearchBot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://hoffmeyer-demo.headbangermarketing.com/sitemap.xml
