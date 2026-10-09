@@ -453,3 +453,8 @@ section[id], article[id] { scroll-margin-top: 90px; }
 @media (prefers-contrast: more) {
   .intro, .pillars, .contact, .brands-strip { background-image: none; }
 }
+
+/* Keep heading-to-copy spacing local to section and page introductions. */
+.pillars__head > h2 + p,
+.shead > h2 + p,
+.page-head > h1 + .lede { margin-top: 16px; }
