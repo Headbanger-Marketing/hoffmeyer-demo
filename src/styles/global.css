@@ -458,3 +458,8 @@ section[id], article[id] { scroll-margin-top: 90px; }
 .pillars__head > h2 + p,
 .shead > h2 + p,
 .page-head > h1 + .lede { margin-top: 16px; }
+
+/* Quote anchors clear the header; keyboard focus remains visible. */
+.qcard { scroll-margin-top: 100px; }
+.qcard :is(input, select, textarea, button, a):focus-visible { outline: 3px solid currentColor; outline-offset: 3px; }
+.qcard__fallback { font-size: .875rem; line-height: 1.5; margin-top: 10px; }

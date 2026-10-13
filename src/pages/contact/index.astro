@@ -5,7 +5,7 @@ import QuoteForm from '../../components/QuoteForm.astro';
 import { site } from '../../data/site';
 
 const title = `Contact | ${site.name}`;
-const description = `Contact ${site.name} in ${site.address.locality}, Ontario. Licensed plumbers and gas-certified HVAC technicians for Goderich and Huron County. Office $Request a quote, ${site.hours.emergency.toLowerCase()}.`;
+const description = `Contact ${site.name} in ${site.address.locality}, Ontario. Licensed plumbers and gas-certified HVAC technicians for Goderich and Huron County. Office $Get A Free Quote, ${site.hours.emergency.toLowerCase()}.`;
 
 const breadcrumb = JSON.stringify({
   '@context': 'https://schema.org', '@type': 'BreadcrumbList',
@@ -33,7 +33,7 @@ const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURICompo
     <div class="container contact__grid">
       <div class="contact__intro reveal">
         <h2>By phone or email</h2>
-        <a class="contact__phone" href="/contact/#quote"><Icon name="phone" size={20} /> Request a quote</a>
+        <a class="contact__phone" href="/contact/#quote"><Icon name="phone" size={20} /> Get A Free Quote</a>
         <p style="margin-top:18px"><a href={`mailto:${site.email}`} style="font-weight:600">{site.email}</a></p>
         <p class="contact__hours"><b>Office</b><br />{site.hours.weekdays}<br />{site.hours.saturday}<br />{site.hours.sunday}<br /><b>Service requests</b><br />Use the quote form to arrange a callback.</p>
         <div class="contact__proof">
@@ -44,7 +44,7 @@ const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURICompo
         </div>
         <p style="margin-top:18px"><a href={mapUrl} target="_blank" rel="noopener">Get directions <Icon name="arrowRight" size={15} /></a></p>
       </div>
-      <div class="reveal d1"><QuoteForm id="contact-quote" /></div>
+      <div class="reveal d1"><QuoteForm id="quote" /></div>
     </div>
   </section>
 
@@ -53,7 +53,7 @@ const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURICompo
       <h2>Not sure what you need?</h2>
       <p class="lede">Tell us what is going on and we will point you to the right service and the right technician.</p>
       <div class="cta-actions">
-        <a class="btn btn-primary btn-lg" href="/contact/#quote"><Icon name="phone" size={19} /> Request a quote</a>
+        <a class="btn btn-primary btn-lg" href="/contact/#quote"><Icon name="phone" size={19} /> Get A Free Quote</a>
       </div>
     </div>
   </section>

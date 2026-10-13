@@ -46,8 +46,8 @@ const breadcrumb = JSON.stringify({
       <slot />
 
       <div style="margin-top:30px">
-        <a class="btn btn-primary btn-lg" href="/contact/"><Icon name="send" size={19} /> Get a Quote</a>
-        <a class="btn btn-outline btn-lg" href="/contact/#quote" style="margin-left:10px"><Icon name="phone" size={19} /> Request a quote</a>
+        <a class="btn btn-primary btn-lg" href="/contact/#quote"><Icon name="send" size={19} /> Get A Free Quote</a>
+        <a class="btn btn-outline btn-lg" href="mailto:info@jaydensmechanical.com" style="margin-left:10px">Email team</a>
       </div>
     </div>
   </section>
@@ -73,7 +73,7 @@ const breadcrumb = JSON.stringify({
       <div class="contact__intro reveal">
         <h2>Talk to us about {pillar.nav.toLowerCase()}</h2>
         <p>Send a few details and we will call you back, once the request and availability have been reviewed.</p>
-        <a class="contact__phone" href="/contact/#quote"><Icon name="phone" size={20} /> Request a quote</a>
+        <a class="contact__phone" href="/contact/#quote"><Icon name="phone" size={20} /> Get A Free Quote</a>
       </div>
       <div class="reveal d1">
         <QuoteForm id={`${pillar.slug}-quote`} defaultService={pillar.name} />
