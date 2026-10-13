@@ -16,8 +16,9 @@ focusQuote();
 document.querySelectorAll('form.qcard').forEach((el) => {
   const form = el as HTMLFormElement;
   if (form.dataset.leadSubmitBound === 'true') return;
-  form.dataset.leadSubmitBound = 'true';
   const preferred = form.querySelector('[name="preferred_contact"]') as HTMLSelectElement | null;
+  const submitButton = form.querySelector('button[type="submit"]') as HTMLButtonElement | null;
+  if (!preferred || !submitButton || !form.querySelector('.qcard__done')) return;
   const contactInputs = Array.from(form.querySelectorAll('[data-contact-field] input')) as HTMLInputElement[];
   const updateContact = () => {
     contactInputs.forEach(input => {
@@ -93,4 +94,7 @@ document.querySelectorAll('form.qcard').forEach((el) => {
       form.removeAttribute('aria-busy');
     }
   });
+  form.dataset.leadSubmitBound = 'true';
+  form.dataset.intakeReady = 'true';
+  submitButton.disabled = false;
 });

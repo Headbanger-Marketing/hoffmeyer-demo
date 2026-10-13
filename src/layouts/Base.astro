@@ -107,6 +107,7 @@ const allSchemas = [JSON.stringify(localBusinessSchema), ...schemaBlocks]
     entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
   }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
   document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+  document.documentElement.classList.add('reveal-ready');
 </script>
 <script src="https://hvac-agent.headbangermarketing.com/assets/chat-widget.js?v=20261012-1" data-api="https://hvac-agent.headbangermarketing.com" data-privacy="/privacy/" defer></script>
 </body>
