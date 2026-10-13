@@ -463,3 +463,8 @@ section[id], article[id] { scroll-margin-top: 90px; }
 .qcard { scroll-margin-top: 100px; }
 .qcard :is(input, select, textarea, button, a):focus-visible { outline: 3px solid currentColor; outline-offset: 3px; }
 .qcard__fallback { font-size: .875rem; line-height: 1.5; margin-top: 10px; }
+
+/* Contact choice keeps only its required channel visible. */
+[data-contact-field][hidden] { display: none !important; }
+.section-jumps { display: flex; flex-wrap: wrap; gap: 8px 18px; margin: 18px 0 0; }
+.section-jumps a { min-height: 44px; display: inline-flex; align-items: center; text-underline-offset: 4px; }

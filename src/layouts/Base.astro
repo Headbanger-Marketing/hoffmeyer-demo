@@ -62,7 +62,7 @@ const localBusinessSchema = {
     },
   ],
   parentOrganization: { '@type': 'Organization', name: site.partner.name, url: site.partner.url },
-  sameAs: [`https://${site.domain}`],
+  // No sameAs until an official controlled brand destination is verified.
 };
 const allSchemas = [JSON.stringify(localBusinessSchema), ...schemaBlocks]
   .map((s) => `<script type="application/ld+json">${s}</script>`).join('\n');

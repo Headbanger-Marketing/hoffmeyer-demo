@@ -1,7 +1,7 @@
 // Single source of truth for the Hoffmeyer Plumbing & Heating brand + acquisition context.
 // Bespoke to Hoffmeyer; do NOT copy values into sibling brand sites.
 //
-// Rebuild from archive: hoffmeyerplumbing.com is NXDOMAIN (unregistered), but a rich
+// Rebuild from archive: hoffmeyerplumbing.com serves unrelated content as of 2026-10-13; a rich
 // 2018-2021 Wayback archive survives. NAP, founding date (May 2 1958), the three
 // generations (Jack -> Doug -> Chris Hoffmeyer), the service taxonomy, the dealer
 // brands, and the Vista Credit program below are VERIFIED from that archive + current
@@ -20,7 +20,7 @@ export const site = {
   entityDefinition:
     "Hoffmeyer Plumbing & Heating Limited is a plumbing, heating, and cooling contractor at 55 Kingston St in Goderich, Ontario, serving Goderich and Huron County across residential and commercial plumbing, drain and sewer work, furnaces, boilers, air conditioning, hydronic and radiant heating, water heaters, fireplaces, and natural gas and propane since 1958. A three-generation, family-run business, it is now part of the Jayden's Mechanical family.",
   domain: 'hoffmeyerplumbing.com',
-  // Demo host now; production = hoffmeyerplumbing.com once registered + cutover (separate step).
+  // Demo host now; production destination requires confirmed domain control before cutover.
   url: 'https://hoffmeyer-demo.headbangermarketing.com',
   est: 1958, // VERIFIED: founded May 2, 1958 as "Near & Hoffmeyer".
   foundedDate: 'May 2, 1958',
@@ -30,7 +30,7 @@ export const site = {
   // VERIFIED from the archive + directory listings.
   phone: { display: '(519) 237-4328', tel: '+15192374328' }, // Jayden's 24/7 dispatch (verified jaydensmechanical.com); old 519-524-7861 dead post-acquisition.
   phoneEmergency: { display: '(519) 237-4328', tel: '+15192374328' }, // same number - Jayden's routes 24/7 through one line; old 519-524-4111 is gone.
-  // VERIFIED via jaydensmechanical.com (old hoffmeyerplumbing.com mailbox dead - domain NXDOMAIN).
+  // VERIFIED via jaydensmechanical.com (historical hoffmeyerplumbing.com mailbox is not an approved contact).
   email: 'info@jaydensmechanical.com',
   address: {
     street: '55 Kingston St',

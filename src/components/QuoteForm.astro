@@ -15,8 +15,20 @@ const options = [...pillars.map((p) => p.name), 'Financing & rentals', 'Emergenc
     <input id={`${id}-name`} name="name" type="text" required autocomplete="name" placeholder="Your name" />
   </div>
   <div class="field">
-    <label for={`${id}-phone`}>Phone</label>
+    <label for={`${id}-preferred`}>How should we contact you?</label>
+    <select id={`${id}-preferred`} name="preferred_contact"><option value="phone">Phone call</option><option value="email">Email</option></select>
+  </div>
+  <div class="field" data-contact-field="phone">
+    <label for={`${id}-phone`}>Phone *</label>
     <input id={`${id}-phone`} name="phone" type="tel" required autocomplete="tel" placeholder="(519) 555-0123" />
+  </div>
+  <div class="field" data-contact-field="email" hidden>
+    <label for={`${id}-email`}>Email *</label>
+    <input id={`${id}-email`} name="email" type="email" autocomplete="email" placeholder="you@example.com" />
+  </div>
+  <div class="qcard__row">
+    <div class="field"><label for={`${id}-city`}>City / Town (optional)</label><input id={`${id}-city`} name="city" type="text" autocomplete="address-level2" /></div>
+    <div class="field"><label for={`${id}-postal`}>Postal code (optional)</label><input id={`${id}-postal`} name="postal" type="text" autocomplete="postal-code" maxlength="7" /></div>
   </div>
   <div class="field">
     <label for={`${id}-service`}>What do you need?</label>
@@ -26,7 +38,7 @@ const options = [...pillars.map((p) => p.name), 'Financing & rentals', 'Emergenc
   </div>
   <div class="field">
     <label for={`${id}-msg`}>Anything else? (optional)</label>
-    <textarea id={`${id}-msg`} name="message" rows="3" placeholder="Tell us about your home, your system, or the best time to call"></textarea>
+    <textarea id={`${id}-msg`} name="message" rows="3" placeholder="Tell us about your home, your system, or the preferred contact time"></textarea>
   </div>
   <button class="btn btn-primary btn-lg" type="submit"><Icon name="send" size={19} /> <span class="btn__label">Get A Free Quote</span></button>
   <p class="qcard__note" role="status" aria-live="polite" aria-atomic="true">Submitting requests a follow-up. Availability and appointments are confirmed separately.</p>
