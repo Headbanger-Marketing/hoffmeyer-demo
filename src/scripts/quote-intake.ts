@@ -18,20 +18,21 @@ document.querySelectorAll('form.qcard').forEach((el) => {
   if (form.dataset.leadSubmitBound === 'true') return;
   const preferred = form.querySelector('[name="preferred_contact"]') as HTMLSelectElement | null;
   const submitButton = form.querySelector('button[type="submit"]') as HTMLButtonElement | null;
-  if (!preferred || !submitButton || !form.querySelector('.qcard__done')) return;
+  if (!submitButton || !form.querySelector('.qcard__done')) return;
   const contactInputs = Array.from(form.querySelectorAll('[data-contact-field] input')) as HTMLInputElement[];
   const updateContact = () => {
     contactInputs.forEach(input => {
       const field = input.closest('[data-contact-field]') as HTMLElement;
-      const selected = field.dataset.contactField === (preferred?.value || 'phone');
+      const selected = preferred ? field.dataset.contactField === preferred.value : true;
       field.hidden = !selected;
-      input.required = selected;
+      input.required = preferred ? selected : input.type === 'email';
       if (!selected) input.setCustomValidity('');
     });
   };
   const validatePhone = () => {
     const phone = contactInputs.find(input => input.closest('[data-contact-field]')?.getAttribute('data-contact-field') === 'phone');
-    if (phone && phone.required) {
+    if (phone && !phone.required && !phone.value.trim()) phone.setCustomValidity('');
+    if (phone && (phone.required || phone.value.trim())) {
       const digits = phone.value.replace(/\D/g, '');
       phone.setCustomValidity(digits.length >= 10 && digits.length <= 15 ? '' : 'Enter a phone number with at least 10 digits.');
     }
@@ -51,11 +52,11 @@ document.querySelectorAll('form.qcard').forEach((el) => {
     if ((form.querySelector('input[name="_honey"]') as HTMLInputElement | null)?.value) return;
     const data = new FormData(form);
     const value = (key: string, fallback: string) => String(data.get(key) || data.get(fallback) || '').trim();
-    const channel = preferred?.value || 'phone';
+    const channel = preferred?.value || 'email';
     const params = new URLSearchParams({
-      '1.3': value('1.3', 'name'), '2': channel === 'email' ? value('2', 'email') : '', '4': channel === 'phone' ? value('4', 'phone') : '',
+      '1.3': value('1.3', 'name'), '2': value('2', 'email'), '4': value('4', 'phone'),
       '5.1': value('5.1', 'address'), '5.3': value('5.3', 'city'), '5.5': value('5.5', 'postal'),
-      '3': 'Contact preference: ' + channel + ' | ' + (data.get('service') ? 'Service: ' + data.get('service') + ' | ' : '') + value('3', 'message'),
+      '3': (data.get('service') ? 'Service: ' + data.get('service') + ' | ' : '') + value('3', 'message'),
       source_url: window.location.href, date_created: new Date().toISOString(),
     });
     button.disabled = true;

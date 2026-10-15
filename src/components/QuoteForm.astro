@@ -14,17 +14,13 @@ const options = [...pillars.map((p) => p.name), 'Financing & rentals', 'Emergenc
     <label for={`${id}-name`}>Name</label>
     <input id={`${id}-name`} name="name" type="text" required autocomplete="name" placeholder="Your name" />
   </div>
-  <div class="field">
-    <label for={`${id}-preferred`}>How should we contact you?</label>
-    <select id={`${id}-preferred`} name="preferred_contact"><option value="phone">Phone call</option><option value="email">Email</option></select>
-  </div>
   <div class="field" data-contact-field="phone">
-    <label for={`${id}-phone`}>Phone *</label>
-    <input id={`${id}-phone`} name="phone" type="tel" required autocomplete="tel" placeholder="(519) 555-0123" />
+    <label for={`${id}-phone`}>Phone (optional)</label>
+    <input id={`${id}-phone`} name="phone" type="tel" autocomplete="tel" placeholder="(519) 555-0123" />
   </div>
-  <div class="field" data-contact-field="email" hidden>
+  <div class="field" data-contact-field="email">
     <label for={`${id}-email`}>Email *</label>
-    <input id={`${id}-email`} name="email" type="email" autocomplete="email" placeholder="you@example.com" />
+    <input id={`${id}-email`} name="email" type="email" autocomplete="email" placeholder="you@example.com" required />
   </div>
   <div class="qcard__row">
     <div class="field"><label for={`${id}-city`}>City / Town (optional)</label><input id={`${id}-city`} name="city" type="text" autocomplete="address-level2" /></div>
