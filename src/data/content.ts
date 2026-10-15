@@ -237,27 +237,27 @@ export const generations: { date: string; body: string }[] = [
 
 export const faqs: [string, string][] = [
   [
-    'Are you licensed and insured?',
-    'Yes, we are a licensed and insured plumbing, heating, and cooling contractor. We pull permits and arrange inspection on the work that requires it, every time.',
+    "What details help with a Goderich heating repair request?",
+    "Give the equipment type, model if safely visible, the fuel used and what changed when the problem began. Mention rooms or other equipment affected. A clear symptom history helps the service team arrange the right assessment without guessing at a diagnosis."
   ],
   [
-    'Do you offer 24-hour emergency service?',
-    'Yes. A burst pipe, a no-heat call, or a sewer backup cannot always wait until morning. Call the 24-hour emergency line and we will get a technician out across Goderich and Huron County, day or night.',
+    "Can I ask about a propane system outside town?",
+    "Identify the Huron County address and specify propane rather than natural gas, along with the appliance involved. Include any previous service paperwork you have. The provider must confirm the work, relevant qualifications and travel arrangements for that property."
   ],
   [
-    'Are you gas-certified?',
-    'Yes, for both natural gas and liquid propane. We install and service furnaces, boilers, water heaters, fireplaces, and gas lines, and the fuel side is handled by the same licensed crew as the rest of the work.',
+    "How should I compare a rental with buying a water heater?",
+    "Request the complete current agreement, monthly charges, term, service coverage and exit or buyout conditions. Compare the total obligation with an installed purchase price. A Hoffmeyer website enquiry does not establish credit approval or a finance contract."
   ],
   [
-    'Do you rent water heaters and equipment?',
-    'Yes. Through our Vista Credit program we offer rental and finance options on water heaters, furnaces, air conditioners, and boilers, including no-charge installation, monthly pre-authorized payment, and rate-increase protection. Exact terms are confirmed at the time of the quote.',
+    "What should I include for a sewer or plumbing problem?",
+    "Describe the affected fixtures, when the symptom occurs and whether water is actively escaping. For a Goderich or nearby Huron County property, give access details and any earlier inspection findings. Avoid entering contaminated water to gather more information."
   ],
   [
-    'What areas do you serve?',
-    'We are based at 55 Kingston St in Goderich and serve Goderich and the surrounding Huron County communities, including Clinton, Bayfield, Seaforth, and Blyth. If you are unsure whether we cover your address, call us and we will confirm.',
+    "Which nearby locations can I ask about?",
+    "The site describes Goderich and surrounding Huron County communities, including Clinton, Bayfield, Seaforth and Blyth. Send the exact property location and project type; a listed community does not establish a particular attendance time."
   ],
   [
-    'Are you still the same Hoffmeyer from Goderich?',
-    "Yes. The Hoffmeyer name, the Kingston Street location, and the crews continue to serve local customers. Three generations of the Hoffmeyer family built this business since 1958, and for the customers who have called us for decades, the same standard of work continues, with service details confirmed for each request.",
-  ],
+    "Is the online request a confirmed emergency booking?",
+    "The Hoffmeyer form collects the information needed for follow-up. A visit, price and response time require an agreement with the service team. If the situation presents immediate danger, contact emergency services instead of waiting on an online reply."
+  ]
 ];
