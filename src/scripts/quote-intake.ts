@@ -25,7 +25,7 @@ document.querySelectorAll('form.qcard').forEach((el) => {
       const field = input.closest('[data-contact-field]') as HTMLElement;
       const selected = preferred ? field.dataset.contactField === preferred.value : true;
       field.hidden = !selected;
-      input.required = preferred ? selected : input.type === 'email';
+      input.required = preferred ? selected : true;
       if (!selected) input.setCustomValidity('');
     });
   };
@@ -41,13 +41,29 @@ document.querySelectorAll('form.qcard').forEach((el) => {
   preferred?.addEventListener('change', updateContact);
   updateContact();
 
+  const postal = form.querySelector('[data-quote-field="postal"]') as HTMLInputElement | null;
+  const validatePostal = () => {
+    if (!postal) return;
+    const value = postal.value.trim();
+    postal.setCustomValidity(/^[ABCEGHJ-NPRSTVXY]\d[ABCEGHJ-NPRSTVWXYZ][ -]?\d[ABCEGHJ-NPRSTVWXYZ]\d$/i.test(value) ? '' : 'Enter a valid Canadian postal code.');
+  };
+  postal?.addEventListener('blur', validatePostal);
+  postal?.addEventListener('input', () => postal.setCustomValidity(''));
+  form.querySelectorAll<HTMLInputElement | HTMLTextAreaElement>('[required]').forEach(input => input.addEventListener('input', () => input.setCustomValidity('')));
+  let received = false;
+
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
+    if (received) return;
     const button = form.querySelector('button[type="submit"]') as HTMLButtonElement | null;
     const label = button?.querySelector('.btn__label');
     const note = form.querySelector('.qcard__note') as HTMLElement | null;
     const done = form.querySelector('.qcard__done') as HTMLElement | null;
     validatePhone();
+    validatePostal();
+    form.querySelectorAll<HTMLInputElement | HTMLTextAreaElement>('[required]:not([type="checkbox"])').forEach(input => {
+      if (input !== postal && input.type !== "tel") input.setCustomValidity(input.value.trim() ? "" : "Complete this field.");
+    });
     if (!button || !done || button.disabled || !form.reportValidity()) return;
     if ((form.querySelector('input[name="_honey"]') as HTMLInputElement | null)?.value) return;
     const data = new FormData(form);
@@ -73,8 +89,10 @@ document.querySelectorAll('form.qcard').forEach((el) => {
         body: params.toString(), signal: controller.signal,
       });
       const result = await response.json();
-      if (!response.ok || result.error || result.success === false || result.accepted === false || result.status === 'error'
+      if (!response.ok || !result || typeof result !== 'object' || Array.isArray(result) || result.error || result.success === false || result.accepted === false || result.ok === false || result.failed === true || result.rejected === true || result.receipt === 'not_confirmed'
+        || (Array.isArray(result.errors) ? result.errors.length > 0 : Boolean(result.errors)) || /^(error|failed|failure|rejected|denied)$/i.test(String(result.status || ''))
         || (result.success !== true && result.accepted !== true)) throw new Error('Acceptance not confirmed');
+      received = true;
       form.querySelectorAll('.field, .qcard__sub, .qcard__fallback, .qcard > h3').forEach((field) => field.setAttribute('hidden', ''));
       button.hidden = true;
       if (note) note.hidden = true;
@@ -83,7 +101,7 @@ document.querySelectorAll('form.qcard').forEach((el) => {
       done.hidden = false;
       done.focus();
     } catch {
-      if (label) label.textContent = 'Get A Free Quote';
+      if (label) label.textContent = 'Request My Free Quote';
       if (note) {
         note.hidden = false;
         note.textContent = 'We could not confirm your request. Your details are still here. Please try again or use the contact link below.';
@@ -91,7 +109,7 @@ document.querySelectorAll('form.qcard').forEach((el) => {
     } finally {
       window.clearTimeout(timer);
       fields.forEach(field => { field.disabled = false; });
-      button.disabled = false;
+      button.disabled = received;
       form.removeAttribute('aria-busy');
     }
   });

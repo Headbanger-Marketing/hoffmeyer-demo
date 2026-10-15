@@ -5,38 +5,20 @@ import { pillars } from '../data/content';
 interface Props { id?: string; defaultService?: string; compact?: boolean; }
 const { id = 'quote', defaultService } = Astro.props;
 const options = [...pillars.map((p) => p.name), 'Financing & rentals', 'Emergency repair', 'Maintenance', 'Something else'];
+const support = Astro.url.pathname === '/' ? 'No obligation. Fast response. Honest pricing.' : 'Tell us about your plumbing, heating or cooling issue.';
 ---
-<form class="qcard" id={id} action={site.webhookUrl} method="POST" onsubmit="if(this.dataset.intakeReady !== 'true') return false" novalidate>
+<form class="qcard" id={id} action={site.webhookUrl} method="POST" onsubmit="if(this.dataset.intakeReady !== 'true') return false" data-quote-contract="2026-10-15" novalidate>
   <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
-  <h3>Get A Free Quote</h3>
-  <p class="qcard__sub">Send a few details. The service team will review your request and confirm service availability.</p>
-  <div class="field">
-    <label for={`${id}-name`}>Name</label>
-    <input id={`${id}-name`} name="name" type="text" required autocomplete="name" placeholder="Your name" />
-  </div>
-  <div class="field" data-contact-field="phone">
-    <label for={`${id}-phone`}>Phone (optional)</label>
-    <input id={`${id}-phone`} name="phone" type="tel" autocomplete="tel" placeholder="(519) 555-0123" />
-  </div>
-  <div class="field" data-contact-field="email">
-    <label for={`${id}-email`}>Email *</label>
-    <input id={`${id}-email`} name="email" type="email" autocomplete="email" placeholder="you@example.com" required />
-  </div>
-  <div class="qcard__row">
-    <div class="field"><label for={`${id}-city`}>City / Town (optional)</label><input id={`${id}-city`} name="city" type="text" autocomplete="address-level2" /></div>
-    <div class="field"><label for={`${id}-postal`}>Postal code (optional)</label><input id={`${id}-postal`} name="postal" type="text" autocomplete="postal-code" maxlength="7" /></div>
-  </div>
-  <div class="field">
-    <label for={`${id}-service`}>What do you need?</label>
-    <select id={`${id}-service`} name="service">
-      {options.map((o) => <option value={o} selected={o === defaultService}>{o}</option>)}
-    </select>
-  </div>
-  <div class="field">
-    <label for={`${id}-msg`}>Anything else? (optional)</label>
-    <textarea id={`${id}-msg`} name="message" rows="3" placeholder="Tell us about your home, your system, or the preferred contact time"></textarea>
-  </div>
-  <button class="btn btn-primary btn-lg" type="submit" disabled><Icon name="send" size={19} /> <span class="btn__label">Get A Free Quote</span></button>
+  <h3 data-quote-heading>Get a Free Quote</h3>
+  <p class="qcard__sub" data-quote-support>{support}</p>
+
+  <div class="field"><label for={`${id}-name`}>Full Name *</label><input id={`${id}-name`} name="name" data-quote-field="name" type="text" autocomplete="name" placeholder="Jane Doe" required /></div>
+  <div class="qcard__row"><div class="field" data-contact-field="phone"><label for={`${id}-phone`}>Phone *</label><input id={`${id}-phone`} name="phone" data-quote-field="phone" type="tel" autocomplete="tel" placeholder="(905) 000-0000" required /></div><div class="field" data-contact-field="email"><label for={`${id}-email`}>Email *</label><input id={`${id}-email`} name="email" data-quote-field="email" type="email" autocomplete="email" placeholder="you@email.com" required /></div></div>
+  <div class="field"><label for={`${id}-address`}>Street Address</label><input id={`${id}-address`} name="address" data-quote-field="address" type="text" autocomplete="address-line1" placeholder="123 Main St" /></div>
+  <div class="qcard__row"><div class="field"><label for={`${id}-city`}>City *</label><input id={`${id}-city`} name="city" data-quote-field="city" type="text" autocomplete="address-level2" placeholder={site.address.locality} required /></div><div class="field"><label for={`${id}-postal`}>Postal Code *</label><input id={`${id}-postal`} name="postal" data-quote-field="postal" type="text" autocomplete="postal-code" placeholder="N1A 1A1" maxlength="7" required /></div></div>
+  <div class="field"><label for={`${id}-service`}>Work to discuss</label><select id={`${id}-service`} name="service" data-quote-field="service"><option value="">Choose the work</option>{options.map((o) => <option value={o} selected={o === defaultService}>{o}</option>)}</select></div>
+  <div class="field"><label for={`${id}-msg`}>Briefly describe your issue *</label><textarea id={`${id}-msg`} name="message" data-quote-field="message" rows="3" maxlength="6000" placeholder="e.g. Leaking pipe under the sink, or furnace won’t turn on." required></textarea></div>
+    <button class="btn btn-primary btn-lg" type="submit" disabled><Icon name="send" size={19} /> <span class="btn__label">Request My Free Quote</span></button>
   <p class="qcard__note" role="status" aria-live="polite" aria-atomic="true">Submitting requests a follow-up. Availability and appointments are confirmed separately.</p>
   <p class="qcard__fallback">Need help? <a href="/contact/#quote">Contact our team</a>. This form is not monitored for emergencies.</p>
   <div class="qcard__done" role="status" tabindex="-1" hidden>
