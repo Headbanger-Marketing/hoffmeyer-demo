@@ -18,7 +18,7 @@ export const site = {
     'Hoffmeyer Goderich',
   ],
   entityDefinition:
-    "Hoffmeyer Plumbing & Heating Limited is a plumbing, heating, and cooling contractor at 55 Kingston St in Goderich, Ontario, serving Goderich and Huron County across residential and commercial plumbing, drain and sewer work, furnaces, boilers, air conditioning, hydronic and radiant heating, water heaters, fireplaces, and natural gas and propane since 1958. A three-generation, family-run business, it is now part of the Jayden's Mechanical family.",
+    "Hoffmeyer Plumbing & Heating Limited is a plumbing, heating, and cooling contractor at 55 Kingston St in Goderich, Ontario, serving Goderich and Huron County across residential and commercial plumbing, drain and sewer work, furnaces, boilers, air conditioning, hydronic and radiant heating, water heaters, fireplaces, and natural gas and propane since 1958. A three-generation, family-run business.",
   domain: 'hoffmeyerplumbing.com',
   // Demo host now; production destination requires confirmed domain control before cutover.
   url: 'https://hoffmeyer-demo.headbangermarketing.com',
@@ -31,7 +31,6 @@ export const site = {
   phone: { display: '(519) 237-4328', tel: '+15192374328' }, // Jayden's 24/7 dispatch (verified jaydensmechanical.com); old 519-524-7861 dead post-acquisition.
   phoneEmergency: { display: '(519) 237-4328', tel: '+15192374328' }, // same number - Jayden's routes 24/7 through one line; old 519-524-4111 is gone.
   // VERIFIED via jaydensmechanical.com (historical hoffmeyerplumbing.com mailbox is not an approved contact).
-  email: 'info@jaydensmechanical.com',
   address: {
     street: '55 Kingston St',
     locality: 'Goderich',
@@ -65,12 +64,6 @@ export const site = {
     'Blyth',
     'Huron County',
   ],
-  partner: {
-    name: "Jayden's Mechanical",
-    url: 'https://jaydensmechanical.com',
-    acquiredYear: 2023, // VERIFIED: Jayden's blog + Facebook (Nov 27, 2023), "65-year legacy".
-    short: "Now part of the Jayden's Mechanical family",
-  },
   geo: { lat: 43.7392, lng: -81.7107 }, // 55 Kingston St, Goderich, ON.
   hours: {
     weekdays: 'Mon-Fri, 8am - 5pm',

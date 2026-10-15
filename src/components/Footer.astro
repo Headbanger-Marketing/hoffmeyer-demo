@@ -8,11 +8,8 @@ const year = new Date().getFullYear();
   <div class="container footer-grid">
     <div class="footer-about">
       <span class="brand__wordmark">Hoffmeyer Plumbing &amp; Heating Ltd.</span>
-      <p>Plumbing, heating, cooling, and gas contractor based at 55 Kingston St in Goderich, serving Goderich and Huron County since 1958. Three generations, one shop, now part of the Jayden's Mechanical family.</p>
-      <a class="family" href={site.partner.url} target="_blank" rel="noopener">
-        <span class="familybar__chip"><img src="/assets/img/jaydens-mechanical.png" alt="Jayden's Mechanical" width="452" height="76" loading="lazy" /></span>
-        Part of the Jayden's Mechanical family
-      </a>
+      <p>Plumbing, heating, cooling, and gas contractor based at 55 Kingston St in Goderich, serving Goderich and Huron County since 1958. Three generations, one shop.</p>
+      <a class="family" href="/contact/#quote"><span class="familybar__chip" style="color:#172923">{site.shortName}</span> Service enquiries and follow-up</a>
     </div>
     <nav class="footer-links" aria-label="Services">
       <h4>Services</h4>
@@ -45,6 +42,6 @@ const year = new Date().getFullYear();
 </footer>
 
 <div class="mobile-bar">
-  <a class="btn btn-espresso" href="mailto:info@jaydensmechanical.com"><Icon name="send" size={18} /> Email</a>
+  <a class="btn btn-espresso" href="/contact/#quote"><Icon name="send" size={18} /> Contact</a>
   <a class="btn btn-primary" href="/contact/#quote"><Icon name="send" size={18} /> Get A Free Quote</a>
 </div>

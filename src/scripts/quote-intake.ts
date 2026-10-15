@@ -79,7 +79,7 @@ document.querySelectorAll('form.qcard').forEach((el) => {
       button.hidden = true;
       if (note) note.hidden = true;
       const confirmation = done.querySelector('p');
-      if (confirmation) confirmation.textContent = 'Your request has been accepted. Jayden\'s Mechanical will follow up by ' + (channel === 'email' ? 'email' : 'phone') + ' to confirm service availability and the next step. Submission does not book an appointment.';
+      if (confirmation) confirmation.textContent = 'Your request has been accepted. The service team will follow up by ' + (channel === 'email' ? 'email' : 'phone') + ' to confirm service availability and the next step. Submission does not book an appointment.';
       done.hidden = false;
       done.focus();
     } catch {

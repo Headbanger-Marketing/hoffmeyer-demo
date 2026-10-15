@@ -6,7 +6,7 @@ import { site } from '../data/site';
 import { pillars, faqs, generations } from '../data/content';
 
 const title = `${site.name} | Plumber & HVAC in Goderich & Huron County`;
-const description = `${site.name} is a plumbing, heating, cooling, and gas contractor in Goderich, Ontario, serving Huron County since 1958. Three generations. Drain and sewer work, furnaces, boilers, AC, water heaters, fireplaces, and 24-hour emergency service. Now part of the Jayden's Mechanical family.`;
+const description = `${site.name} is a plumbing, heating, cooling, and gas contractor in Goderich, Ontario, serving Huron County since 1958. Three generations. Drain and sewer work, furnaces, boilers, AC, water heaters, fireplaces, and 24-hour emergency service.`;
 
 const faqSchema = JSON.stringify({
   '@context': 'https://schema.org', '@type': 'FAQPage',
@@ -34,12 +34,11 @@ const steps = [
         <h1>Plumbing, heating, and cooling for <em>Huron County homes and businesses</em></h1>
         <p class="hero__sub">
           {site.name} is a plumbing, heating, cooling, and gas contractor at {site.address.street} in {site.address.locality},
-          serving the region since 1958. Three generations, one shop, with 24-hour emergency service, now backed by the wider
-          {site.partner.name} family.
+          serving the region since 1958. Three generations, one shop, with 24-hour emergency service.
         </p>
         <div class="hero__cta">
           <a class="btn btn-primary btn-lg" href="/contact/#quote"><Icon name="send" size={19} /> Get A Free Quote</a>
-          <a class="btn btn-cobalt-line btn-lg" href="mailto:info@jaydensmechanical.com">Email team</a>
+          <a class="btn btn-cobalt-line btn-lg" href="/contact/#quote">Contact team</a>
         </div>
         <div class="hero__proof">
           <span><Icon name="shield" size={16} /> Licensed &amp; insured</span>
@@ -84,10 +83,7 @@ const steps = [
           furnace, a tankless water heater, or a gas fireplace, the work is done by licensed plumbers and gas-certified
           technicians who live in the community they serve.
         </p>
-        <p>
-          In {site.partner.acquiredYear} the company joined the {site.partner.name} family. The Hoffmeyer name, the Kingston
-          Street location, and the crews all continue, now backed by a wider Southwestern Ontario group for parts, crews, and depth.
-        </p>
+        <p>Our local shop continues to support homes and businesses in the communities we serve. Tell us about your property and the work you need. Our team will review the request, discuss suitable options, and confirm service availability, written scope and pricing before an appointment or work is agreed.</p>
       </div>
     </div>
   </section>
@@ -216,14 +212,14 @@ const steps = [
   <section class="story" id="story">
     <div class="container story__grid">
       <div class="story__lead reveal">
-        <span class="eyebrow on-dark">A new chapter</span>
-        <h2>The same Goderich shop,<br />a wider family behind it.</h2>
-        <p class="story__sub">In {site.partner.acquiredYear}, {site.shortName} joined the {site.partner.name} family. Here is what that means for the customers who have called us for decades.</p>
+        <span class="eyebrow on-dark">Our local service</span>
+        <h2>The same Goderich shop,<br />local service you can ask about.</h2>
+        <p class="story__sub">Our local shop continues to support the communities we serve. Here is what to expect when you contact our team about your home or business.</p>
       </div>
       <div class="story__body reveal d1">
-        <p>For you, almost nothing changes day to day. The Hoffmeyer name stays. The Kingston Street location stays. The plumbers and technicians who know Huron County homes stay. What is new is the backing: a larger Southwestern Ontario group means more crew for peak and emergency calls, more depth behind the work, and access to a wider range of equipment.</p>
+        <p>For you, almost nothing changes day to day. The Hoffmeyer name stays. The Kingston Street location stays. The plumbers and technicians who know Huron County homes stay. Discuss the equipment and work you need with our team. We confirm the available service, project scope, timing and price for your property.</p>
         <div class="story__pull"><Icon name="shield" size={18} /><span>The same shop. The same standard. More depth behind it.</span></div>
-        <p>If you have called us before, your experience carries on unchanged. If you are new to Hoffmeyer, you get a sixty-plus-year Goderich contractor with the reach of a larger group.</p>
+        <p>If you have called us before, your experience carries on unchanged. If you are new to Hoffmeyer, you get a sixty-plus-year Goderich contractor with local service experience.</p>
       </div>
     </div>
   </section>

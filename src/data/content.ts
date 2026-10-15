@@ -232,7 +232,7 @@ export const generations: { date: string; body: string }[] = [
   { date: '1994', body: 'Jack retires and his son <b>Doug Hoffmeyer</b> takes the reins, the second generation.' },
   { date: '2007', body: "Doug's son <b>Chris Hoffmeyer</b> joins the business, the third generation." },
   { date: '2011', body: 'The <b>Goderich tornado</b> damages the building; the shop runs from 317 Huron Rd for about eighteen months before coming home.' },
-  { date: '2023', body: "Hoffmeyer joins the <b>Jayden's Mechanical</b> family as its Goderich branch." },
+  { date: '2023', body: "Hoffmeyer continues serving Goderich and Huron County from its Kingston Street shop." },
 ];
 
 export const faqs: [string, string][] = [
@@ -258,6 +258,6 @@ export const faqs: [string, string][] = [
   ],
   [
     'Are you still the same Hoffmeyer from Goderich?',
-    "Yes. The Hoffmeyer name, the Kingston Street location, and the crews carry on under the Jayden's Mechanical family. Three generations of the Hoffmeyer family built this business since 1958, and for the customers who have called us for decades, the same standard of work continues, now backed by a wider Southwestern Ontario group.",
+    "Yes. The Hoffmeyer name, the Kingston Street location, and the crews continue to serve local customers. Three generations of the Hoffmeyer family built this business since 1958, and for the customers who have called us for decades, the same standard of work continues, with service details confirmed for each request.",
   ],
 ];

@@ -9,7 +9,7 @@ const options = [...pillars.map((p) => p.name), 'Financing & rentals', 'Emergenc
 <form class="qcard" id={id} action={site.webhookUrl} method="POST" onsubmit="if(this.dataset.intakeReady !== 'true') return false" novalidate>
   <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
   <h3>Get A Free Quote</h3>
-  <p class="qcard__sub">Send a few details. Jayden's Mechanical will review your request and confirm service availability.</p>
+  <p class="qcard__sub">Send a few details. The service team will review your request and confirm service availability.</p>
   <div class="field">
     <label for={`${id}-name`}>Name</label>
     <input id={`${id}-name`} name="name" type="text" required autocomplete="name" placeholder="Your name" />
@@ -38,11 +38,11 @@ const options = [...pillars.map((p) => p.name), 'Financing & rentals', 'Emergenc
   </div>
   <button class="btn btn-primary btn-lg" type="submit" disabled><Icon name="send" size={19} /> <span class="btn__label">Get A Free Quote</span></button>
   <p class="qcard__note" role="status" aria-live="polite" aria-atomic="true">Submitting requests a follow-up. Availability and appointments are confirmed separately.</p>
-  <p class="qcard__fallback">Need help? <a href="mailto:info@jaydensmechanical.com">Email Jayden's Mechanical</a>. This form is not monitored for emergencies.</p>
+  <p class="qcard__fallback">Need help? <a href="/contact/#quote">Contact our team</a>. This form is not monitored for emergencies.</p>
   <div class="qcard__done" role="status" tabindex="-1" hidden>
     <Icon name="check" size={28} />
     <h3>Request received</h3>
-    <p>Your request has been accepted. Jayden's Mechanical will review it and confirm service availability and the next step.</p>
+    <p>Your request has been accepted. The service team will review it and confirm service availability and the next step.</p>
   </div>
 </form>
 

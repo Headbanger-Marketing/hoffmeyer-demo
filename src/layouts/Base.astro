@@ -17,10 +17,7 @@ const { title, description, path, active = '', schemaBlocks = [], ogImage } = As
 const canonical = site.url + path;
 const og = ogImage || `${site.url}/assets/img/og-default.jpg`;
 
-// Always emit the LocalBusiness schema with the acquisition parent link.
-// Multi-trade entity -> multi @type. parentOrganization carries the Jayden's
-// relationship; sameAs stays the brand's OWN identity URLs (not the parent) so
-// the two entities do not blur. (Premier's sibling site got this wrong.)
+// Describe this brand and its own identity URLs in the public entity schema.
 const localBusinessSchema = {
   '@context': 'https://schema.org',
   '@type': site.types,
@@ -33,7 +30,6 @@ const localBusinessSchema = {
   foundingDate: String(site.est),
   url: site.url,
 
-  email: site.email,
   image: og,
   logo: `${site.url}/assets/img/hoffmeyer-logo.png`,
   priceRange: '$$',
@@ -61,7 +57,7 @@ const localBusinessSchema = {
       opens: '08:00', closes: '12:00',
     },
   ],
-  parentOrganization: { '@type': 'Organization', name: site.partner.name, url: site.partner.url },
+
   // No sameAs until an official controlled brand destination is verified.
 };
 const allSchemas = [JSON.stringify(localBusinessSchema), ...schemaBlocks]
